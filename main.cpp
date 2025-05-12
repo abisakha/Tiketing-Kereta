@@ -18,6 +18,7 @@ int main() {
         std::cout << "1. Pesan Tiket\n";
         std::cout << "2. Lihat Semua Tiket\n";
         std::cout << "3. Keluar\n";
+        std::cout << "4. Hapus Tiket Terakhir\n";
         std::cout << "Pilih menu: ";
         std::cin >> pilihan;
 
@@ -37,6 +38,13 @@ int main() {
                 std::cout << "Nama: " << t.nama 
                           << ", Tujuan: " << t.tujuan 
                           << ", Jumlah: " << t.jumlahTiket << "\n";
+            }
+        } else if (pilihan == 4) {
+            if (!daftarTiket.empty()) {
+                daftarTiket.pop_back();
+                std::cout << "Tiket terakhir berhasil dihapus.\n";
+            } else {
+                std::cout << "Tidak ada tiket untuk dihapus.\n";
             }
         }
     } while (pilihan != 3);
